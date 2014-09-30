@@ -5,14 +5,18 @@
 
 #include "config.h"
 
-
+//////////////////////////////////////////////////
+/*initialize the conf object*/
 config_t conf = {
 	DEF_INPUT_PATH,
 	DEF_OUTPUT_PATH,
 	1
 };
+/////////////////////////////////////////////////
 
-
+/**
+ * remove the space character at the left of the str
+ */
 static
 char * trim_left(char *str) {
 	char *p;
@@ -25,6 +29,9 @@ char * trim_left(char *str) {
 	return strcpy(str, p);
 }
 
+/**
+ * remove the space character at the right of the str
+ */
 static
 char * trim_right(char *str) {
 	int len;
@@ -43,6 +50,9 @@ char * trim_right(char *str) {
 	return str;
 }
 
+/**
+ * get the key and value of the line
+ */
 static
 int get_kv(char *line, char **key, char **value) {
 	char *p;
@@ -71,7 +81,9 @@ int get_kv(char *line, char **key, char **value) {
 	return 0;
 }
 
-
+/**
+ * read the configuration file, and export to conf object
+ */
 int read_config(config_t *conf) {
 	char config_line[512];
 	FILE *fp = fopen(CONFIG_FILE_PATH, "r");
@@ -92,8 +104,6 @@ int read_config(config_t *conf) {
 			continue;
 		
 		ret = get_kv(config_line, &key, &value);
-		// if(ret != -1)
-		// 	printf("key:-%s-\nvalue:-%s-\n", key, value);
 		if(ret != -1) {
 			if(IS_EQUAL(key, "input")) {
 				strcpy(conf->input_path, value);

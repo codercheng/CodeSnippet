@@ -10,7 +10,7 @@ extern "C"
 #define CONFIG_FILE_PATH "config.conf"
 
 /**
- * default config value
+ * default configuration value
  */
 #define DEF_INPUT_PATH   "/simon/input/test.c"
 #define DEF_OUTPUT_PATH  "/simon/output/"
