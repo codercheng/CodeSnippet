@@ -17,7 +17,7 @@ extern "C"
 #define DEF_SHOW_MID_STEPS 1
 
 
-#define IS_EQUAL(str1, str2) strncmp(str1, str2, strlen(str2))== 0
+#define IS_EQUAL(str1, str2) strcmp(str1, str2)== 0
 
 typedef struct {
 	char input_path[512];

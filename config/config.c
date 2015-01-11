@@ -26,7 +26,7 @@ char * trim_left(char *str) {
 	while(*p == ' ' && *p != '\0') {
 		++p;
 	}
-	return strcpy(str, p);
+	return memmove(str, p, strlen(p)+1);
 }
 
 /**
