@@ -4,7 +4,8 @@ CodeSnippet
 ### config:
   这是一个简单的处理配置文件程序，简单易用，只需要`#include "config.h"`，在`config.h`中config_t 类型中添加好需要的配置信息就可以了就可以了。代码也很简单。
   
-  bug:`同前缀的key会重复匹配,strncmp-->strcmp`
+  bug fix:
+  2015-01-11: `同前缀的key会重复匹配,strncmp-->strcmp`
   
   *demo*
   ``` c
@@ -20,4 +21,5 @@ CodeSnippet
   	return 0;
   }
   ```
-
+### http_path_parser
+	
