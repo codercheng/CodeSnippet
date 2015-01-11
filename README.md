@@ -27,7 +27,7 @@ CodeSnippet
    
    特别：对于`test.php?username=si&&mon&age=19` user_name中包含`&`的情况也做了处理。会得到`si&&mon`而不是`si`.
    
-   定义了一个struct：
+   定义了一个struct:
    ```c
    typedef struct {
 	    char *key;
@@ -37,7 +37,7 @@ CodeSnippet
 	} KV;
    ```
    来记录key/value的起始位置和长度。
-   接口：
+   接口:
    ```c
    int getKV(char *path, KV *kvs, int *kvs_num)
    ```
