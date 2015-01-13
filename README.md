@@ -1,6 +1,12 @@
 CodeSnippet
 ===========
+目录
+* [config](#config)
+* [http_path_parser](#http_path_parser)
+* [mem_leak_detector](#mem_leak_detector)
 
+
+<a name="config"></a>
 ### config:
   这是一个简单的处理配置文件程序，简单易用，只需要`#include "config.h"`，在`config.h`中config_t 类型中添加好需要的配置信息就可以了就可以了。代码也很简单。
   
@@ -21,6 +27,7 @@ CodeSnippet
   	return 0;
   }
   ```
+<a name="http_path_parser"></a>
 ### http_path_parser
    该程序用来处理http request中path。例如`test.php?user_name=simon&age=19`
    得到该path中所有的Key-value对。
@@ -51,6 +58,7 @@ CodeSnippet
         printf("%.*s=%.*s\n", kvs[i].key_len, kvs[i].key, kvs[i].value_len, kvs[i].value);
    }
    ```
+<a name="mem_leak_detector"></a>
 ### mem_leak_detector
    该程序是针对windows下面的project进行内存泄露检测的, 主要是借助 Visual Studio 和 C 运行时 (CRT) 库，检测和识别内存泄漏。
    我们知道linux下内存泄漏检测会用到`valgrind`，简单好用，那么windows下程序内存泄漏和定位怎么比较简单？
