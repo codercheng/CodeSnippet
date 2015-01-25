@@ -6,6 +6,7 @@ void memoryLeakDetector() {
 #endif
 }
 
+
 void setBreakPoint(int alloc_num) {
 #ifdef _DEBUG
 	_CrtSetBreakAlloc(alloc_num);
